@@ -1,0 +1,154 @@
+hr{
+  border: 1px solid white;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+@media (min-width: 720px) {
+  #container {
+    width: 70%;
+  }
+  body {
+    color: yellow;
+  }
+}
+
+table {
+  text-align: justify;
+  width: 100%;
+  font-size: large;
+  text-align: left;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 2.9px;
+}
+
+tr {
+  line-height: 45px;
+}
+.price {
+  float: right;
+}
+.title {
+  width: 70%;
+  border-bottom: solid 1px;
+}
+.puntos {
+  width: 50%;
+  border-bottom: solid 1px;
+}
+
+body {
+  background-color: #081639;
+  color: white;
+}
+
+.mainMenu {
+  border: 1px solid white;
+  color: green;
+  overflow: hidden;
+  position: fixed;
+  top: 0px;
+  display: fixed;
+  width: 100%;
+  background: #155724;
+}
+
+.mainMenu a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 4px 7px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.mainMenu a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.mainMenu > div {
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 2.7px;
+  line-height: 55px;
+}
+
+/***********************************/
+.secMenu {
+  border: 1px dotted yellow;
+  color: rgb(31, 250, 31);
+  overflow: hidden;
+  position: fixed;
+  top: 70px;
+  display: fixed;
+  width: 100%;
+  background: #155724;
+}
+.secMenu a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 4px 7px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.secMenu a:hover {
+  background: #ddd;
+  color: black;
+}
+.secMenu > div {
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 2.7px;
+  line-height: 25px;
+}
+
+.mainContainer {
+  padding-left: 10px;
+  /* border: 1px solid red; */
+  display: block;
+  flex-direction: row;
+  margin-top: 120px;
+}
+
+.myFooter {
+  /* position: fixed; */
+  /* display: block; */
+  /* padding-left: 20px; */
+  border: 1px solid yellow;
+  background-color: green;
+  font-size: large;
+  font-size: 30px;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 3.9px;
+  display: block;
+  line-height: 35px;
+  padding: 20px;
+  /* padding-left: 20px; */
+}
+
+.tmp {
+  border: 2px dotted green;
+  clear: both;
+  position: relative;
+  height: 40px;
+  background-color: yellow;
+  /* margin-top: -300px; */
+}
+
+html,
+#root {
+  height: 100%;
+}
+
+.jss2.jss3 {
+  height: calc(100% - 65px);
+}
+
+.jss189 {
+  height: calc(100% - 132px);
+}
