@@ -1,30 +1,24 @@
-import React, { Component } from "react";
+// import React, { Component } from "react";
+import React from "react";
 
-class ListItems extends Component {
-	render() {
-		console.log("**x ", this.props);
-		return this.props.data.map(function(item, i) {
-			return (
-				<li key={i}>
-					{" "}
-					{item.name} ... $ {item.price}{" "}
-				</li>
-			);
-		});
-	}
+function ListItems_in(val) {
+  return val.data.map(function(item, i) {
+    return (
+      <li key={i}>
+        {" "}
+        {item.name} ... $ {item.price}{" "}
+      </li>
+    );
+  });
 }
 
-// class ListItems222 extends Component {
-// 	render() {
-// 		console.log("-->", this.props.data);
-// 		return (
-// 			<div>
-// 				{" "}
-// 				<ListIt props={this.props} />{" "}
-// 			</div>
-// 			// <div> ListIt  </div>
-// 		);
-// 	}
-// }
+function ListItems(val) {
+  // return ListItems_in(val)
+  return (
+    <div>
+      <h5>{val.title}</h5> {ListItems_in(val)}{" "}
+    </div>
+  );
+}
 
 export default ListItems;

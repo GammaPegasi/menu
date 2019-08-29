@@ -1,18 +1,20 @@
-import React, { Component } from "react";
+import React from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-class Menu extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			foo: false
-		};
-	}
-
-	render() {
-		console.log("**x ", this.props);
-		return this.props.data.map(function(item, i) {
-			return <li key={i}> {item.name} </li>;
-		});
-	}
+function Menu_in(val) {
+  return val.data.map(function(item, i) {
+    return (
+      <li key={i}>
+        {" "}
+        <Link to={`/${item.name}`}> {item.name} </Link>{" "}
+      </li>
+    );
+  });
 }
+
+function Menu(val) {
+  // return <Router> {Menu_in(val)} </Router>
+  return Menu_in(val);
+}
+
 export default Menu;

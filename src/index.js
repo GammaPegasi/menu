@@ -7,60 +7,77 @@ import "./styles.css";
 import { MainMenuData } from "./Components/data";
 import Menu from "./Components/Menu";
 import ListItems from "./Components/ListItems";
+import Display from "./Components/Display";
+
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+function Home() {
+  return <h4>Home </h4>;
+}
+function About() {
+  return <h4>About </h4>;
+}
+function Topics() {
+  return <h4>Topics </h4>;
+}
 
 console.log(Menu);
 class App extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			mainMenuData: MainMenuData,
-			ptr: 0,
-			selectedMainItem: MainMenuData[0]
-		};
-		this.actionLink = this.actionLink.bind(this);
-	}
+  constructor(props) {
+    super(props);
+    this.state = {
+      mainMenuData: MainMenuData,
+      ptr: 0,
+      selectedMainItem: MainMenuData[0]
+    };
+    this.actionLink = this.actionLink.bind(this);
+  }
 
-	actionLink = () => {
-		this.setState({
-			ptr: (this.state.ptr + 1) % 4,
-			selectedMainItem: MainMenuData[this.state.ptr]
-		});
-		console.log(JSON.stringify(this.state, null, 3));
-	};
+  actionLink = () => {
+    this.setState({
+      ptr: (this.state.ptr + 1) % 4,
+      selectedMainItem: MainMenuData[this.state.ptr]
+    });
+    console.log(JSON.stringify(this.state, null, 3));
+  };
 
-	render() {
-		return (
-			<div>
-				<button onClick={this.actionLink}> inc </button>
+  render() {
+    return (
+      <Router>
+        <div>
+          <button onClick={this.actionLink}> inc </button>
 
-				<Menu
-					data={MainMenuData}
-					callback={function() {
-						return alert("as");
-					}}
-				/>
+          <Menu
+            data={MainMenuData}
+            callback={function() {
+              return alert("as");
+            }}
+          />
 
-				<hr />
-				<h5> {this.state.selectedMainItem.name} </h5>
+          <hr />
+          <h5> {this.state.selectedMainItem.name} </h5>
 
-				<Menu
-					name={this.state.selectedMainItem.name}
-					data={this.state.selectedMainItem.menu}
-					callback={() => alert("as")}
-				/>
-				<hr />
-				<ListItems
-					data={this.state.selectedMainItem.menu[0].menu}
-					callback={() => alert("as")}
-				/>
+          <Menu
+            name={this.state.selectedMainItem.name}
+            data={this.state.selectedMainItem.menu}
+            callback={() => alert("as")}
+          />
+          <hr />
+          <ListItems
+            title={this.state.selectedMainItem.menu[0].name}
+            data={this.state.selectedMainItem.menu[0].menu}
+            callback={() => alert("as")}
+          />
 
-				{/* <pre style={{color: 'white'}}>
+          {/* <pre style={{color: 'white'}}>
 				 {JSON.stringify(this.state.selectedMainItem.menu[0], null, 3)}
 				 </pre> */}
+        </div>
 
-			</div>
-		);
-	}
+        <Display />
+      </Router>
+    );
+  }
 }
 
 const rootElement = document.getElementById("root");
