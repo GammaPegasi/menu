@@ -1,4 +1,4 @@
-hr{
+hr {
   border: 1px solid white;
 }
 
@@ -43,20 +43,23 @@ tr {
 body {
   background-color: #081639;
   color: white;
+  margin: 4px;
 }
 
 .mainMenu {
-  border: 1px solid white;
+  /* border: 1px solid white; */
   color: green;
   overflow: hidden;
   position: fixed;
   top: 0px;
+  left: 0px;
   display: fixed;
   width: 100%;
   background: #155724;
+  /* margin-left: 25px; */
 }
 
-.mainMenu a {
+.mainMenu div {
   float: left;
   display: block;
   color: #f2f2f2;
@@ -66,7 +69,7 @@ body {
   font-size: 17px;
 }
 
-.mainMenu a:hover {
+.mainMenu div:hover {
   background: #ddd;
   color: black;
 }
@@ -79,25 +82,28 @@ body {
 
 /***********************************/
 .secMenu {
-  border: 1px dotted yellow;
+  /* border: 1px dotted yellow; */
   color: rgb(31, 250, 31);
   overflow: hidden;
   position: fixed;
   top: 70px;
+  left: 0px;
   display: fixed;
   width: 100%;
   background: #155724;
+  /* margin-left: 25px; */
 }
-.secMenu a {
+.secMenu div {
   float: left;
   display: block;
   color: #f2f2f2;
+
   text-align: center;
   padding: 4px 7px;
   text-decoration: none;
   font-size: 17px;
 }
-.secMenu a:hover {
+.secMenu div:hover {
   background: #ddd;
   color: black;
 }
@@ -106,19 +112,20 @@ body {
   letter-spacing: 2.7px;
   line-height: 25px;
 }
-
-.mainContainer {
-  padding-left: 10px;
-  /* border: 1px solid red; */
-  display: block;
-  flex-direction: row;
-  margin-top: 120px;
+a {
+  color: #edf0f3;
+}
+.itemsContainer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  overflow-y: scroll;
+  max-height: 90%;
+  top: 119px;
+  left: 12px;
 }
 
 .myFooter {
-  /* position: fixed; */
-  /* display: block; */
-  /* padding-left: 20px; */
   border: 1px solid yellow;
   background-color: green;
   font-size: large;
@@ -128,6 +135,7 @@ body {
   display: block;
   line-height: 35px;
   padding: 20px;
+  bottom: 10px;
   /* padding-left: 20px; */
 }
 
@@ -151,4 +159,23 @@ html,
 
 .jss189 {
   height: calc(100% - 132px);
+}
+
+li {
+  /* height: 60px; */
+  text-align: justify;
+  width: 100%;
+  font-size: large;
+  text-align: left;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 2.9px;
+  line-height: 35px;
+}
+
+.menuBars {
+  z-index: 1;
+}
+
+.container {
+  padding-left: 0px;
 }

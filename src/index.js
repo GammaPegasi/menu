@@ -1,83 +1,88 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "./styles.css";
+// import { MainMenuData } from "./Components/data";
+import { MainMenuData } from "./Components/datasp";
 
-import { MainMenuData } from "./Components/data";
 import Menu from "./Components/Menu";
-import ListItems from "./Components/ListItems";
-import Display from "./Components/Display";
+import PageItems from "./Components/ListItems";
 
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+// import { BrowserRouter as Router } from "react-router-dom";
 
-function Home() {
-  return <h4>Home </h4>;
-}
-function About() {
-  return <h4>About </h4>;
-}
-function Topics() {
-  return <h4>Topics </h4>;
-}
-
-console.log(Menu);
+// console.log(Menu);
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      mainMenuData: MainMenuData,
-      ptr: 0,
-      selectedMainItem: MainMenuData[0]
-    };
-    this.actionLink = this.actionLink.bind(this);
-  }
+	render() {
+		return <Main />;
+	}
+}
 
-  actionLink = () => {
-    this.setState({
-      ptr: (this.state.ptr + 1) % 4,
-      selectedMainItem: MainMenuData[this.state.ptr]
-    });
-    console.log(JSON.stringify(this.state, null, 3));
-  };
+class Main extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			mainMenuData: MainMenuData,
+			ptr: 0,
+			selectedMainItem: MainMenuData[0]
+		};
+		this.actionLink = this.actionLink.bind(this);
+		this.actionChangeMenu = this.actionChangeMenu.bind(this);
+	}
 
-  render() {
-    return (
-      <Router>
-        <div>
-          <button onClick={this.actionLink}> inc </button>
+	actionLink = () => {
+		this.setState({
+			// ptr: (this.state.ptr + 1) % 4,
+			// selectedMainItem: MainMenuData[this.state.ptr]
+		});
+	};
 
-          <Menu
-            data={MainMenuData}
-            callback={function() {
-              return alert("as");
-            }}
-          />
+	actionChangeMenu = e => {
+		var tmp = this.state.mainMenuData.findIndex(
+			x => x.name === e.target.textContent.trim()
+		);
+		this.setState({
+			ptr: tmp,
+			selectedMainItem: MainMenuData[tmp]
+		});
+		// console.log(e.target.textContent.trim(), this.state.ptr);
+		// e.preventDefault();
+		// e.stopPropagation();
+	};
 
-          <hr />
-          <h5> {this.state.selectedMainItem.name} </h5>
+	render() {
+		return (
+			<Router>
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<Menu
+								callback={this.actionChangeMenu}
+								val={MainMenuData}
+								class="mainMenu"
+							/>
+							{/* <h5> {this.state.selectedMainItem.name} </h5> */}
 
-          <Menu
-            name={this.state.selectedMainItem.name}
-            data={this.state.selectedMainItem.menu}
-            callback={() => alert("as")}
-          />
-          <hr />
-          <ListItems
-            title={this.state.selectedMainItem.menu[0].name}
-            data={this.state.selectedMainItem.menu[0].menu}
-            callback={() => alert("as")}
-          />
+							<Menu
+								parentMenu={this.state.selectedMainItem.name}
+								val={this.state.selectedMainItem.menu}
+								class="secMenu"
+							/>
+						</div>
+					</div>
+				</div>
 
-          {/* <pre style={{color: 'white'}}>
-				 {JSON.stringify(this.state.selectedMainItem.menu[0], null, 3)}
-				 </pre> */}
-        </div>
-
-        <Display />
-      </Router>
-    );
-  }
+				<div class="container itemsContainer">
+					<div class="row">
+						<div class="col-sm-12">
+							<PageItems data={this.state.selectedMainItem.menu} />
+						</div>
+					</div>
+				</div>
+			</Router>
+		);
+	}
 }
 
 const rootElement = document.getElementById("root");

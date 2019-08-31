@@ -1,9 +1,14 @@
 export const MainMenuData = [
   {
+    name: "Home",
+    menu: []
+  },
+
+  {
     name: "Drinks",
     menu: [
       {
-        name: "Beer",
+        name: "Beers",
         menu: [
           { name: "Laguer", price: 120 },
           {
@@ -17,7 +22,7 @@ export const MainMenuData = [
         ]
       },
       {
-        name: "Soda",
+        name: "Sodas",
         menu: [
           {
             name: "soda Laguer",
@@ -33,33 +38,133 @@ export const MainMenuData = [
           }
         ]
       },
-      { name: "Cocktail", menu: [] },
-      { name: "Spirit", menu: [] }
+      {
+        name: "Cocktails",
+        menu: [
+          {
+            name: "Margarita",
+            price: 120
+          },
+          {
+            name: "Manhattan",
+            price: 120
+          },
+          {
+            name: "Martini",
+            price: 120
+          },
+          {
+            name: "Bloody Mary",
+            price: 120
+          }
+        ]
+      },
+      {
+        name: "Spirit",
+        menu: [
+          {
+            name: "Whisky",
+            price: 120
+          },
+          {
+            name: "Vodka",
+            price: 120
+          },
+          {
+            name: "Tequila Jose Cuervo",
+            price: 120
+          },
+          {
+            name: "Ron",
+            price: 120
+          },
+          {
+            name: "Brandi",
+            price: 120
+          }
+        ]
+      }
     ]
   },
   {
     name: "Food",
     menu: [
       {
-        name: "Main Dish",
+        name: "Main Dishes",
         menu: [
           {
-            name: "Main Dish 1",
+            name: "Ginger fried chicken",
             price: 120
           },
           {
-            name: "Main Dish 2",
+            name: "Stuffed omelette",
             price: 120
           },
           {
-            name: "Main Dish 3",
+            name: "Mu phat sato phak Tai",
             price: 120
           }
         ]
       },
-      { name: "Entrance" },
-      { name: "Desert" },
-      { name: "Snaks" }
+      {
+        name: "Entrances",
+
+        menu: [
+          {
+            name: "Risotto",
+            price: 320
+          },
+          {
+            name: "Lasaña",
+            price: 230
+          },
+          {
+            name: "Polenta",
+            price: 230
+          },
+          {
+            name: "Pizza",
+            price: 200
+          }
+        ]
+      },
+      {
+        name: "Desserts",
+        menu: [
+          {
+            name: "German chocolate cake",
+            price: 420
+          },
+          {
+            name: "Angel cake",
+            price: 430
+          },
+          {
+            name: "Blondie",
+            price: 430
+          },
+          {
+            name: "Cassata",
+            price: 420
+          },
+          {
+            name: "German chocolate cake",
+            price: 420
+          },
+          {
+            name: "Angel cake",
+            price: 430
+          },
+          {
+            name: "Blondie",
+            price: 430
+          },
+          {
+            name: "Cassata",
+            price: 420
+          }
+        ]
+      }
     ]
   },
 
@@ -76,9 +181,10 @@ export const MainMenuData = [
       },
       { name: "Barman", menu: [] }
     ]
-  },
-  {
-    name: "Home",
-    menu: [{ name: "Contact", menu: [] }, { name: "Our story", menu: [] }]
   }
+  //   ,
+  //   {
+  // 		name: "Contact",
+  // 		menu: [{ name: "Contact", menu: [] }, { name: "Our story", menu: [] }]
+  // 	}
 ];
